@@ -31,9 +31,9 @@ PORT = '8091'
 DEBUG = True
 
 # The shared secret with the Verifai middleware
-VERIFAI_INTERNAL_TOKEN = 'a20541118dbdd071fa0fec86d8ea44e99c5b9709f5d7cd82'
+VERIFAI_INTERNAL_TOKEN = 'input here internal token'
 # Url to the Verifai middleware
-MIDDLEWARE_URL = 'https://rug.websdk.verifai.io'
+MIDDLEWARE_URL = 'input here middleware url'
 # Authorization header
 HEADERS = {'Authorization': 'Bearer ' + VERIFAI_INTERNAL_TOKEN}
 # The url for the handover
