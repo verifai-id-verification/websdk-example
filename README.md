@@ -19,7 +19,7 @@ pip3 install -r requirements.txt
 python3 main.py
 ```
 
-You can check if the server is running by going to:
+Do not forget to insert the internal token and WebSDK url in `main.py`. You can check if the server is running by going to:
 http://0.0.0.0:8091/token
 
 Here you should be greeted with some json.

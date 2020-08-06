@@ -30,9 +30,9 @@ HOST = '0.0.0.0'
 PORT = '8091'
 DEBUG = True
 
-# The shared secret with the Verifai middleware
+# The shared secret with the Verifai WebSDK
 VERIFAI_INTERNAL_TOKEN = 'input here internal token'
-# Url to the Verifai middleware
+# Url to the Verifai WebSDK
 MIDDLEWARE_URL = 'input here middleware url'
 # Authorization header
 HEADERS = {'Authorization': 'Bearer ' + VERIFAI_INTERNAL_TOKEN}
@@ -70,7 +70,7 @@ def get_token():
         # The url to where Verifai should point during a handover.
         # There should be a served Verifai SDK at this location connected to the same middleware as the initial SDK.
         # In the example it points to where the example frontend is served.
-        "handover_base_url": HANDOVER_BASE_URL 
+        "handover_base_url": HANDOVER_BASE_URL
 
         # "country_choices_blacklist": json.dumps(["DE", "IT"]),  # You can exclude countries
         # "country_choices_whitelist": json.dumps(["NL"])  # Or exclusively include countries
