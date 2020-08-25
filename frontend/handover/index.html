@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Verifai Handover</title>
+    <!--  For now you need to inject React because Verifai uses this -->
+    <!--  We will include this in our bundle in later versions of the WebSDK -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!--  Inject Verifai -->
+
+    <link rel="stylesheet" type="text/css" href="../public/style/styles.css">
+</head>
+<body>
+    <script src="../public/js/verifai.js"></script>
+    <!--  We created a simple result app that shows the Verifai result on the web page -->
+    <script src="../public/js/result.js"></script>
+    <!--  The js example -->
+    <script src="example.js"></script>
+    <!--  Inject The verifai styles -->
+    <!--  Mount point for the Verifai button and sdk -->
+    <div id="verifai-mount"></div>
+</body>
+</html>

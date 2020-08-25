@@ -19,7 +19,7 @@ pip3 install -r requirements.txt
 python3 main.py
 ```
 
-Do not forget to insert the internal token and WebSDK url in `main.py`. You can check if the server is running by going to:
+You can check if the server is running by going to:
 http://0.0.0.0:8091/token
 
 Here you should be greeted with some json.
@@ -70,17 +70,3 @@ These 3 endpoints are direct proxies to the middleware:
 
 ### Frontend
 This folder contains an example implementation for the frontend. The files `/frontend/index.html` and `/frontend/example.js` are thoroughly documented and should be self-explanatory.
-
-## Known issues
-
-This list contains some known issues. We are working hard on these and you don't need to report them. Reports on all other issues you may find are very welcome.
-
-* The CSS is not very readable, documented, or modifiable yet.
-* Documentation other than found in this folder.
-* The error screen reset button does not always work.
-* Some older browser and phones are not yet supported.
-* SDK crashes when some buttons are fast repeatedly clicked.
-* Sometimes the cropping does not work.
-* Landscape mode on phones is not supported.
-* Duration of a session or handover is too short.
-* Session timeout does not display an error.
