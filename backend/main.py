@@ -30,14 +30,20 @@ HOST = '0.0.0.0'
 PORT = '8091'
 DEBUG = True
 
-# The shared secret with the Verifai WebSDK
-VERIFAI_INTERNAL_TOKEN = 'input here internal token'
-# Url to the Verifai WebSDK
-MIDDLEWARE_URL = 'input here middleware url'
+# The shared secret with the Verifai middleware
+VERIFAI_INTERNAL_TOKEN = 'your_middelware_internal_token'
+# Url to the Verifai middleware
+MIDDLEWARE_BASE_URL = 'https://url.to.your.middleware'
+# Middleware version
+MIDDLEWARE_VERION = 1
+# Middleware url
+MIDDLEWARE_URL = f'{MIDDLEWARE_BASE_URL}/v{MIDDLEWARE_VERION}'
+
 # Authorization header
 HEADERS = {'Authorization': 'Bearer ' + VERIFAI_INTERNAL_TOKEN}
 # The url for the handover
-HANDOVER_BASE_URL = 'http://localhost:5000/#/handover?s='
+# In this example it is in the /handover/ folder.
+HANDOVER_BASE_URL = 'http://localhost:5000/handover/#/handover?s='
 
 
 # Create a flask app
@@ -52,12 +58,11 @@ CORS(app)
 # Before you can start the Verifai websdk flow you need to get the one time use token.
 # Here the one time use token is requested from the middleware,
 # and returned to the frontend.
-# The return object also holds the 'backend_url', this is the url to the Verifai Middleware.
 # The websdk uses this url to communicate directly with the middleware.
 
 @app.route('/token')
 def get_token():
-    endpoint = f'{MIDDLEWARE_URL}/v1/auth/token'
+    endpoint = f'{MIDDLEWARE_URL}/auth/token'
     data = {
         "document_type_whitelist": json.dumps([  # You can include document types
             "P",  # Passport
@@ -79,13 +84,10 @@ def get_token():
     }
     response = requests.post(endpoint, data, headers=HEADERS)
     content = json.loads(response.content)
-
     verifai_token = content['token']
-    backend_url = MIDDLEWARE_URL + '/v1/'
 
     return jsonify({
         "verifai_token": verifai_token,
-        "backend_url": backend_url
     }), 200
 
 
@@ -99,7 +101,7 @@ def get_token():
 
 @app.route('/result/<string:session_id>')
 def get_result(session_id):
-    endpoint = f'{MIDDLEWARE_URL}/v1/session/{session_id}/verifai-result'
+    endpoint = f'{MIDDLEWARE_URL}/session/{session_id}/verifai-result'
     response = requests.get(endpoint, headers=HEADERS)
     content = json.loads(response.content)
     return jsonify(content), 200
@@ -116,7 +118,7 @@ def get_result(session_id):
 
 @app.route('/session/<string:session_id>', methods=['DELETE'])
 def remove_session(session_id):
-    endpoint = f'{MIDDLEWARE_URL}/v1/session/{session_id}'
+    endpoint = f'{MIDDLEWARE_URL}/session/{session_id}'
     response = requests.delete(endpoint, headers=HEADERS)
     content = json.loads(response.content)
     return jsonify(content), 200
