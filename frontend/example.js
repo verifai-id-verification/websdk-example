@@ -17,7 +17,7 @@ function startVerifai(responseData){
     const token = responseData['verifai_token']
     const config = { // Config for the Verifai websdk
         token: token, // The one time use token
-        backendUrl: MIDDLEWARE_VERSION + '/v' + MIDDLEWARE_BASE_URL + '/', // The url to the Verifai Middleware
+        backendUrl: MIDDLEWARE_BASE_URL + '/v' + MIDDLEWARE_VERSION + '/', // The url to the Verifai Middleware
         element: document.getElementById('verifai-mount'), // The mount point
         locale: 'en', // language
         assetsUrl: 'public/assets', // Where Verifai can find its assets
