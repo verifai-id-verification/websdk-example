@@ -1,0 +1,41 @@
+$verifaiGrey: #4d4d4d;
+$innerBorderColor: darken($verifaiGrey, 10%);
+
+body {
+  background-color: #001234;
+  color: #ffffff
+}
+
+.verifai-logo {
+  width: 120px;
+}
+
+.verifai-result {
+  font-family: 'Roboto', sans-serif;
+
+  table {
+    width: 50%;
+    border: 1px solid $innerBorderColor;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+    tr {
+      border-bottom: 1px solid $innerBorderColor;
+    }
+
+    td {
+      padding: 8px;
+
+      &:first-child {
+        font-weight: bold;
+        width: 30%;
+        border-right: 1px solid $innerBorderColor;
+        background-color: $verifaiGrey;
+      }
+
+      &:last-child {
+        background-color: lighten($verifaiGrey, 10%);
+      }
+    }
+  }
+}
