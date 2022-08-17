@@ -1,0 +1,4 @@
+{
+  "tokenUrl": "https://your.backend.url/token",
+  "resultUrl": "https://your.backend.url/result"
+}
