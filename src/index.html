@@ -4,18 +4,26 @@
   <meta charset="UTF-8">
   <title>Verifai Web SDK Example</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;800&display=swap" rel="stylesheet">
   <link href="http://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
+  <link rel="shortcut icon" href="./assets/favicon.ico">
   <link href="style.scss" rel="stylesheet">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <img src="assets/verifai-logo-watermelon.svg" class="verifai-logo" />
+  <div class="header">
+    <a href="https://www.verifai.com/" target="_blank" rel="noopener noreferrer">
+      <img src="assets/verifai-logo.svg" class="verifai-logo" />
+    </a>
+  </div>
 
   <script type="module" src="index.js"></script>
   <script src="result.js"></script>
 
   <div id="verifai-mount"></div>
-  <div id="verifai-result"></div>
+  <div class="content"></div>
 </body>
 </html>
