@@ -1,40 +1,55 @@
 $verifaiGrey: #4d4d4d;
-$innerBorderColor: darken($verifaiGrey, 10%);
+$verifaiPink: #ff567d;
 
 body {
   background-color: #001234;
-  color: #ffffff
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: $verifaiPink;
+  display: flex;
+  justify-content: center;
+  height: 75px;
+
+  a {
+    display: inherit;
+  }
 }
 
 .verifai-logo {
-  width: 120px;
+  width: 180px;
 }
 
-.verifai-result {
-  font-family: 'Roboto', sans-serif;
+.content {
+  max-width: 700px;
+  display: flex;
+  margin: auto;
+  font-family: 'Barlow', sans-serif;
 
-  table {
-    width: 50%;
-    border: 1px solid $innerBorderColor;
-    table-layout: fixed;
-    border-collapse: collapse;
+  .verifai-result {
+    table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
 
-    tr {
-      border-bottom: 1px solid $innerBorderColor;
-    }
-
-    td {
-      padding: 8px;
-
-      &:first-child {
-        font-weight: bold;
-        width: 30%;
-        border-right: 1px solid $innerBorderColor;
-        background-color: $verifaiGrey;
+      tr {
+        border-top: 2px solid $verifaiPink;
       }
 
-      &:last-child {
-        background-color: lighten($verifaiGrey, 10%);
+      td {
+        padding: 8px;
+
+        &:first-child {
+          font-weight: bold;
+          width: 30%;
+        }
+
+        &:last-child {
+          text-align: right;
+        }
       }
     }
   }

@@ -6,7 +6,7 @@ import { resultUrl } from '../config.json'
 function showResult(resultData) {
   const config = {
     result: resultData,
-    element: document.getElementById('verifai-result')
+    element: document.querySelector('.content')
   }
 
   // The verifaiResultApp object was injected by the `result.js` script
