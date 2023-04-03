@@ -7,15 +7,15 @@
     "process": false
   },
   "scripts": {
-    "start": "npx parcel src/index.html",
-    "build": "npx parcel build src/index.html"
+    "start": "vite serve src --force",
+    "build": "vite build src"
   },
   "dependencies": {
-    "@verifai/websdk": "^2.11.4"
+    "@verifai/websdk": "^2.15.2"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.2",
     "buffer": "^6.0.3",
-    "parcel": "^2.6.2"
+    "vite": "^4.0.4"
   }
 }
